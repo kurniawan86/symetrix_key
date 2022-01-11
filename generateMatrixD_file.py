@@ -1,10 +1,11 @@
 import random
-
 import numpy as np
+
 class generateD:
     matrix = None
     k = 0
     n_alpha = 0
+    nAlpha = 0
     def __init__(self, k, n_powerAlpha):
         self.k = k
         self.n_alpha = n_powerAlpha
