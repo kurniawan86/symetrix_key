@@ -10,6 +10,7 @@ class generateD:
         self.n_alpha = n_powerAlpha
         self.initMatrixZero()
         self.generate()
+        self.statisMatrix()
         self.cetak()
 
     def initMatrixZero(self):
@@ -27,3 +28,16 @@ class generateD:
         self.matrix[0,1] = self.matrix[1,0]
         self.matrix[0,2] = self.matrix[2,0]
         self.matrix[1,2] = self.matrix[2,1]
+
+    def statisMatrix(self):
+        self.matrix[0, 0] = 3
+        self.matrix[0, 1] = 9
+        self.matrix[0, 2] = 2
+
+        self.matrix[1, 0] = 9
+        self.matrix[1, 1] = 13
+        self.matrix[1, 2] = 6
+
+        self.matrix[2, 0] = 2
+        self.matrix[2, 1] = 6
+        self.matrix[2, 2] = 11
