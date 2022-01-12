@@ -48,7 +48,7 @@ class KeySpace:
         return ind
 
     def XOR_vector(self, vector1, vector2):
-        n = vector1.shape[0]
+        n = vector2.shape[0]
         res = []
         for i in range(n):
             res.append(self.XOR(vector1[i], vector2[i]))

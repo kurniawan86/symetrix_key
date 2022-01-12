@@ -33,7 +33,7 @@ class symetric_matrix:
     def create_powerAlpha(self):
         power_alpha = np.zeros(self.n)
         power_alpha[0] = 0
-        power_alpha[1] = -1
+        power_alpha[1] = 1
         for i in range(1, self.n-1):
             power_alpha[i+1] = i
         self.powerAlpha = power_alpha
