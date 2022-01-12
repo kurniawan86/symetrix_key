@@ -9,6 +9,7 @@ class KeySpace:
         self.n = nAlpha
         self.sym_matrix = symetric_matrix
         self.index_aplah = index_aplha
+        # print(self.cocok(np.array([1,0,1,1]),self.sym_matrix[13]))
         # vector1 = self.convert_index2Biner(3)
         # vector2 = self.convert_index2Biner(5)
         # print(vector1)
@@ -19,20 +20,24 @@ class KeySpace:
         res = vector1 + vector2
         res1 = res % 15
         res1 = self.XOR_array1D(res1)
-        self.pencocokan(res1)
+        res1 = self.pencocokan(res1)
+        return  res1
 
     def multiplyPolinom(self, matrixD, matrixG):
         bar, kol = matrixD.shape
         bar2, kol2 = matrixG.shape
+        baris = []
         for i in range(bar):
+            kolom = []
             for j in range(kol2):
                 temp = []
                 for k in range(bar2):
                     temp.append(matrixG[k,j])
                     a = np.array(temp)
-                self.multiplyPolinom1(matrixD[i], a)
-                print("---------")
-            print("============")
+                res = self.multiplyPolinom1(matrixD[i], a)
+                kolom.append(res)
+            baris.append(kolom)
+        return np.array(baris)
 
     def convert_index2Biner(self, index):
         n = self.index_aplah.shape[0]
@@ -68,17 +73,25 @@ class KeySpace:
 
     #kudu pakek fungsi mencocokan satu vector dengan satu dimensi matrix
     def pencocokan(self, vector):
-        print("VECTOR ",vector)
         baris,kol = self.sym_matrix.shape
+        cek = False
+        res = -10
         for i in range(baris):
-            count = 0
-            for j in range(kol):
-                if int(self.sym_matrix[i][j]) == int(vector[j]):
-                    count = count+1
-            print(count)
-            print()
-            if count == 4:
-                print(self.index_aplah[i-1])
-
-    def cocok(self, vector):
-        pass
+            cek = self.cocok(self.sym_matrix[i],vector)
+            if cek == True:
+                res = i
+        return res-1
+    def cocok(self, vector1,vector2):
+        n = vector1.shape[0]
+        count = 0
+        cek = False
+        # print(vector1)
+        # print(vector2)
+        for i in range(n):
+            a = (int(vector1[i]))
+            b = (int(vector2[i]))
+            if a==b:
+                count = count +1
+        if count == 4:
+            cek = True
+        return cek

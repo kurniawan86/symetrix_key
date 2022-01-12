@@ -30,4 +30,5 @@ if __name__ == '__main__':
     # print(pAlpha)
     # print("================")
     obj4 = KeySpace(n_alpha, symetric, pAlpha)
-    obj4.multiplyPolinom(matrix, G1)
+    matrikA = np.transpose(obj4.multiplyPolinom(matrix, G1))
+    print(matrikA)

@@ -26,7 +26,7 @@ class symetric_matrix:
         matrik[11] = [1, 1, 1, 0]
         matrik[12] = [0, 1, 1, 1]
         matrik[13] = [1, 1, 1, 1]
-        matrik[14] = [1, 1, 0, 1]
+        matrik[14] = [1, 0, 1, 1]
         matrik[15] = [1, 0, 0, 1]
         self.matrix = matrik
 
