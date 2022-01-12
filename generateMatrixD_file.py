@@ -12,7 +12,7 @@ class generateD:
         self.initMatrixZero()
         self.generate()
         self.statisMatrix()
-        self.cetak()
+        # self.cetak()
 
     def initMatrixZero(self):
         self.matrix = np.zeros((self.k, self.k))
