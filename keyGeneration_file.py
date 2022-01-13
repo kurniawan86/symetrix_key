@@ -4,6 +4,7 @@ from generateMatrixG import gen_MatrixG
 from grup_node_file import *
 from symentric_matrix_file import symetric_matrix
 from Generating_key_Space_file import KeySpace
+from keyEstablishment import keyEstab
 
 class keyGeneration:
     k = 3
@@ -88,6 +89,17 @@ class keyGeneration:
         print("seed from G")
         print(node_Z.seedFromG)
         print("--------------")
+
+        ################################
+        #key Establish
+        key = keyEstab(keyspace)
+        res = key.linkKey(node_Y.rowFromA,node_Z.seedFromG)
+        print("SATU GRUP Y - Z")
+        print(res)
+        res1 = key.linkKey(node_Y.seedFromG, node_Z.rowFromA)
+        print("SATU GRUP Z - Y")
+        print(res1)
+
 
     def step1(self):
         # print("MATRIK D")
