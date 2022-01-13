@@ -9,19 +9,13 @@ class KeySpace:
         self.n = nAlpha
         self.sym_matrix = symetric_matrix
         self.index_aplah = index_aplha
-        # print(self.cocok(np.array([1,0,1,1]),self.sym_matrix[13]))
-        # vector1 = self.convert_index2Biner(3)
-        # vector2 = self.convert_index2Biner(5)
-        # print(vector1)
-        # print(vector2)
-        # self.XOR_vector(vector1, vector2)
 
     def multiplyPolinom1(self,vector1, vector2):
         res = vector1 + vector2
         res1 = res % 15
         res1 = self.XOR_array1D(res1)
         res1 = self.pencocokan(res1)
-        return  res1
+        return res1
 
     def multiplyPolinom(self, matrixD, matrixG):
         bar, kol = matrixD.shape
@@ -43,8 +37,13 @@ class KeySpace:
         n = self.index_aplah.shape[0]
         ind = None
         for i in range(n):
-            if index == self.index_aplah[i]:
-                ind = self.sym_matrix[i]
+            if index > 0:
+                if index == self.index_aplah[i]:
+                    ind = self.sym_matrix[i]
+            elif index == -1:
+                ind = self.sym.matrix[0]
+            else:
+                ind = self.sym_matrix[1]
         return ind
 
     def XOR_vector(self, vector1, vector2):
@@ -71,7 +70,6 @@ class KeySpace:
             res = 0
         return res
 
-    #kudu pakek fungsi mencocokan satu vector dengan satu dimensi matrix
     def pencocokan(self, vector):
         baris,kol = self.sym_matrix.shape
         cek = False
@@ -85,12 +83,10 @@ class KeySpace:
         n = vector1.shape[0]
         count = 0
         cek = False
-        # print(vector1)
-        # print(vector2)
         for i in range(n):
             a = (int(vector1[i]))
             b = (int(vector2[i]))
-            if a==b:
+            if a == b:
                 count = count +1
         if count == 4:
             cek = True

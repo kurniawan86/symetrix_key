@@ -11,7 +11,6 @@ class gen_MatrixG:
         self.N = N
         self.nAlpha = nAplha
         self.initMatrixZeros()
-
         self.statisG1()
         # self.genG1()
 

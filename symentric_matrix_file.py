@@ -11,9 +11,9 @@ class symetric_matrix:
 
     def generateFourTuple(self):
         matrik = np.zeros((self.n,4))
-        matrik[0] = [0,0,0,0]
-        matrik[1] = [1,0,0,0]
-        matrik[2] = [0,1,0,0]
+        matrik[0] = [0, 0, 0, 0]
+        matrik[1] = [1, 0, 0, 0]
+        matrik[2] = [0, 1, 0, 0]
         matrik[3] = [0, 0, 1, 0]
         matrik[4] = [0, 0, 0, 1]
         matrik[5] = [1, 1, 0, 0]
@@ -22,7 +22,7 @@ class symetric_matrix:
 
         matrik[8] = [1, 1, 0, 1]
         matrik[9] = [1, 0, 1, 0]
-        matrik[10] = [0, 1 ,0 ,1]
+        matrik[10] = [0, 1, 0, 1]
         matrik[11] = [1, 1, 1, 0]
         matrik[12] = [0, 1, 1, 1]
         matrik[13] = [1, 1, 1, 1]
