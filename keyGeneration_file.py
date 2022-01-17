@@ -18,6 +18,7 @@ class keyGeneration:
     def __init__(self, symetric, palpha):
         self.symetric = symetric
         self.pAlpha = palpha
+        # print("power alpha ",self.pAlpha)
         self.main()
 
     def main(self):
@@ -53,7 +54,7 @@ class keyGeneration:
         print(group1.matrix_A)
         print("+++++++++++")
         group2.generateA(self.matrix_D)
-        print("MATRIX A1")
+        print("MATRIX A2")
         print(group2.matrix_A)
         print("===========")
 
@@ -100,6 +101,13 @@ class keyGeneration:
         print("SATU GRUP Z - Y")
         print(res1)
 
+        #key Establish beda Grup
+        res2 = key.linkKey(node_Y.rowFromA, node_W.seedFromG)
+        print("SATU GRUP Y - W")
+        print(res2)
+        res3 = key.linkKey(node_W.rowFromA, node_Y.seedFromG)
+        print("SATU GRUP W - Y")
+        print(res3)
 
     def step1(self):
         # print("MATRIK D")

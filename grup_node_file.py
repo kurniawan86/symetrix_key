@@ -35,6 +35,7 @@ class group:
         k = self.obj_matrixG.k
         N = self.obj_matrixG.N
         nAlpha = self.obj_matrixG.nAlpha
+        # print("nlpha ",nAlpha)
         matrixG1 = self.obj_matrixG.matrixG1
         matrix = np.zeros((k, N))
         if self.bil == 0:

@@ -4,7 +4,9 @@ from generateMatrixG import gen_MatrixG
 
 if __name__ == '__main__':
     obj3 = symetric_matrix()
-    symetric = obj3.matrix
-    vectorG1 = gen_MatrixG
+    fieldElement = obj3.matrix
+    # print("SYMETRIX METRIX", fieldElement)
+
     pAlpha = obj3.powerAlpha
-    obj = keyGeneration(symetric,pAlpha)
+    # print("VECTOR G", pAlpha)
+    obj = keyGeneration(fieldElement, pAlpha)

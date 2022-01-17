@@ -9,6 +9,7 @@ class KeySpace:
         self.n = nAlpha
         self.sym_matrix = symetric_matrix
         self.index_aplah = index_aplha
+        # print("index_alpha ",self.index_aplah)
 
     def multiplyPolinom1(self,vector1, vector2):
         res = vector1 + vector2
@@ -35,6 +36,7 @@ class KeySpace:
 
     def convert_index2Biner(self, index):
         n = self.index_aplah.shape[0]
+        # print("IIIIII", self.index_aplah)
         ind = None
         for i in range(n):
             if index > 0:
