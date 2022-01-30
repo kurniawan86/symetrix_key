@@ -5,9 +5,35 @@ class symetric_matrix:
     powerAlpha = None
     n = 16
 
-    def __init__(self):
-        self.generateFourTuple()
+    def __init__(self, plan):
+        if plan == "scenario 1":
+            self.generateFourTuple()
+        elif plan == "scenario 2":
+            self.generateFourTuple2()
+        else:
+            print("No Scenario Aviable")
         self.create_powerAlpha()
+
+    def generateFourTuple2(self):
+        matrik = np.zeros((self.n, 4))
+        matrik[0] = [0, 0, 0, 0]
+        matrik[1] = [1, 0, 0, 0]
+        matrik[2] = [0, 1, 0, 0]
+        matrik[3] = [0, 0, 1, 0]
+        matrik[4] = [0, 0, 0, 1]
+        matrik[5] = [1, 0, 0, 1]
+        matrik[6] = [1, 1, 0, 1]
+        matrik[7] = [1, 1, 1, 1]
+
+        matrik[8] = [1, 1, 1, 0]
+        matrik[9] = [0, 1, 1, 1]
+        matrik[10] = [1, 0, 1, 0]
+        matrik[11] = [0, 1, 0, 1]
+        matrik[12] = [1, 0, 1, 1]
+        matrik[13] = [1, 1, 0, 0]
+        matrik[14] = [0, 1, 1, 0]
+        matrik[15] = [0, 0, 1, 1]
+        self.matrix = matrik
 
     def generateFourTuple(self):
         matrik = np.zeros((self.n,4))

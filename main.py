@@ -3,10 +3,9 @@ from symentric_matrix_file import symetric_matrix
 from generateMatrixG import gen_MatrixG
 
 if __name__ == '__main__':
-    obj3 = symetric_matrix()
+    #scenario 1 : sesuai dengan yang ada di paper
+    #scenario 2 : generate yang matrik dari perhitungan manual
+    obj3 = symetric_matrix("scenario 1")
     fieldElement = obj3.matrix
-    # print("SYMETRIX METRIX", fieldElement)
-
     pAlpha = obj3.powerAlpha
-    # print("VECTOR G", pAlpha)
     obj = keyGeneration(fieldElement, pAlpha)
